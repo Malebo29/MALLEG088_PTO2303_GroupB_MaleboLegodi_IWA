@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@600&family=Roboto:wght@400;900&display=swap"
         rel="stylesheet">
 
-        <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -45,15 +45,16 @@
     </aside>
 
     <main class="counter">
-        <input class="counter__value" readonly value="0">
+        <input class="counter__value" data-key="number" readonly value="0">
         <div class="counter__actions">
-            <button class="counter__button counter__button_first">-</button>
-            <button class="counter__button">+</button>
+            <button data-key="subtract" class="counter__button counter__button_first">-</button>
+            <button data-key="add" class="counter__button">+</button>
         </div>
     </main>
 
     <footer class="footer">
-        Inspired by <a class="footer__link" href="https://tallycount.app/">Tally Count</a> Note that this is merely a Student practice
+        Inspired by <a class="footer__link" href="https://tallycount.app/">Tally Count</a> Note that this is merely a
+        Student practice
         project for learning JavaScript.
     </footer>
 </body>
