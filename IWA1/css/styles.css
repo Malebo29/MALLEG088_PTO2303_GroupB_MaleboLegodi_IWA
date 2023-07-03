@@ -1,5 +1,8 @@
 :root {
     --color-green: #31c48d;
+    --color-red-light: #f2dede;
+    --color-red-dark: #a94442;
+    --color-black: #000000;
     --color-white: #ffffff;
     --color-dark-grey: #33333d;
     --color-medium-grey: #424250;
@@ -47,7 +50,7 @@ body {
 /* counter */
 
 .counter {
-    max-width: 38rem;
+    max-width: 30rem;
     background: var(--color-dark-grey);
 }
 
@@ -100,9 +103,18 @@ color: var(--color-light-grey);
 padding: 2rem;
 font-size: 0.8rem;
 text-align: center;
+width: 100%;
 }
 
 .footer__link{
     color: var(--color-white);
     text-decoration: none;
+}
+
+/* Error message for when the JavaScript file doesnt load or is disabled. */
+
+.error{
+    padding: 2rem;
+background: var(--color-red-light);
+color: var(--color-red-dark);
 }

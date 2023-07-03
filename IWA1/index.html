@@ -11,7 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@600&family=Roboto:wght@400;900&display=swap"
         rel="stylesheet">
-<!-- Loads the JavaScript and runs it. This does not need to be called “scripts.js” but it is common to name it “script” or “scripts”  -->
+    <!-- Loads the JavaScript and runs it. This does not need to be called “scripts.js” but it is common to name it “script” or “scripts”. 
+        The “defer” attribute tells the browser to load the HTML first before running the JavaScript.  -->
 
     <script src="script.js" defer></script>
 </head>
@@ -46,6 +47,9 @@
     </aside>
 
     <main class="counter">
+        <noscript>
+            <p class="error">This web app requires JavaScript to work.</p>
+        </noscript>
         <input class="counter__value" data-key="number" readonly value="0">
         <div class="counter__actions">
             <button data-key="subtract" class="counter__button counter__button_first">-</button>
