@@ -1,9 +1,13 @@
-import {company} from './configuration.js'
-import {year} from './configuration.js'
+/* Issues with the code: 
+wrong spelling of the word 'from' and incorrect way of importing the configuration.js file.
+single quotes used instead of double quotes to concatenate strings and variables.
+*/
 
-console.log(company, year);
+import { company, year } from './configuration.js'
 
-// const message = '© ' + company + ' (' + year + ')'
-// document.querySelector('footer').innerText = message;
+// console.log(company, year);
 
-// console.log(message);
+const message = "© " + company + " ( " + year + ")"
+document.querySelector("footer").innerText = message;
+
+console.log(message);
