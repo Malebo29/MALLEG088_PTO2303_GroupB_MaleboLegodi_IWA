@@ -1,6 +1,6 @@
-private firstname = "Alex"
-private surname = "Naidoo"
-public role = "Head of Marketing"
+export const  firstname = "Alex"
+export const  surname = "Naidoo"
+export let role = "Head of Marketing"
 
-private display= firstname + " " + surname + " (" + role + ")"
-document.querySelector('#alex').innerText = display
+export const display= firstname + " " + surname + " (" + role + ")"
+document.querySelector("#alex").innerText = display
