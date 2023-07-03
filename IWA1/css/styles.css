@@ -20,6 +20,7 @@ body {
     color: var(--color-white);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
@@ -46,6 +47,7 @@ body {
 /* counter */
 
 .counter {
+    max-width: 38rem;
     background: var(--color-dark-grey);
 }
 
