@@ -10,9 +10,24 @@ const divider = '----------------------------------'
 
 // Only change below this line
 
-const owed = parseInt('R' + leoBalance + sarahBalance)
-const leo = "{leoName} + {leoSurname} + \"Owed\" + \"R\" + {sarahBalance}"
-const sarah = "{leoName} + {surname} + \"Owed\" + \"R\" + {sarahBalance}"
+const owed = ('R' + parseFloat(leoBalance + sarahBalance));
+
+console.log(owed);
+
+/* Trying to remove the extra lines in a given string
+using the replaceAll method
+*/
+console.log(leoSurname.replace(/\s/g,''));
+console.log(sarahName.replace(/\s/g,''));
+
+const leo = `${leoName} ${leoSurname} (Owed: R ${leoBalance})`;
+
+console.log(leo);
+
+const sarah = `${sarahName} ${sarahSurname} (Owed: R ${sarahBalance})`;
+
+console.log(sarah);
+
 const total = "Total amount owed: "
 const result = leo + sarah + divider + divider + total + owed + divider
 
