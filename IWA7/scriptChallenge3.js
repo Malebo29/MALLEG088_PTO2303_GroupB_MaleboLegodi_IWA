@@ -17,14 +17,18 @@ console.log(owed);
 /* Trying to remove the extra lines in a given string
 using the replaceAll method
 */
-console.log(leoSurname.replace(/\s/g,''));
-console.log(sarahName.replace(/\s/g,''));
 
-const leo = `${leoName} ${leoSurname} (Owed: R ${leoBalance})`;
+// let leoSurname.trimEnd();
+// sarahName.trimEnd();
+
+// console.log(leoSurname.replace(/\s/g,""));
+// console.log(sarahName.replace(/\s/g,""));
+
+const leo = `${leoName} ${leoSurname.trimEnd()} (Owed: R ${leoBalance})`;
 
 console.log(leo);
 
-const sarah = `${sarahName} ${sarahSurname} (Owed: R ${sarahBalance})`;
+const sarah = `${sarahName.trimEnd()} ${sarahSurname} (Owed: R ${sarahBalance})`;
 
 console.log(sarah);
 
