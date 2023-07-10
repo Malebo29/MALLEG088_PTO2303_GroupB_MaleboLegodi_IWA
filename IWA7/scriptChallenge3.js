@@ -10,51 +10,16 @@ const divider = '----------------------------------'
 
 // Only change below this line
 
-// I need to sort out the owed variable into numbers
-
-// const owed = parseInt(leoBalance + sarahBalance);
-
-const owed = (leoBalance*-1 + sarahBalance*-1);
-
-console.log(typeof leoBalance);
-
-/* console log to be removed... 
-This console log is working meaning the code above is working...
-Note to self: Leave As Is
-
+const owed = parseInt(leoBalance + sarahBalance);
+const leo = `${leoName} ${leoSurname.trimEnd()} (Owed: R ${(leoBalance*-1).toFixed(2)})`;
+const sarah = `${sarahName.trimEnd()} ${sarahSurname} (Owed: R ${(sarahBalance*-1).toFixed(2)})`;
+const total = Number((leoBalance*-1).toFixed(2)) + Number((sarahBalance*-1).toFixed(2));
+const newLine = "\n"
+/* working perfect because you have you 2 divider lines surrounding 
+the STRING - Total amount owed: R 
 */
 
-const leo = `${leoName} ${leoSurname.trimEnd()} (Owed: R${leoBalance})`;
-
-console.log(leo);
-
-/* console log to be removed... 
-This console log is working meaning the code above is working...
-Note to self: Leave As Is
-
-*/
-
-const sarah = `${sarahName.trimEnd()} ${sarahSurname} (Owed: R${sarahBalance})`;
-
-console.log(sarah);
-
-/* Below code is Work In-Progress
-console log to be removed... 
-This console log is working meaning the code above is working...
-Note to self: Leave As Is
-
-*/
-
-const total = Number(leo) + Number(sarah);
-console.log(total)
-
-// Still to work out...only after the negative is a number
-
-const result = divider + 'Total amount owed: R ' + total + divider;
-
-// the below code is checking if you managed to turn everything into a string
-
-console.log(typeof result);
+const result = leo + newLine + sarah + newLine + newLine + divider + newLine + '  Total amount owed: R ' + total + newLine + divider;
 
 // below is the original console code....the only required console log
 
