@@ -41,3 +41,23 @@ sarah['name'] = 'Sarah Kleinhans'
 
 console.log(leo, leo['address']['postalCode'])
 console.log(sarah, sarah['address']['postalCode'])
+
+/* The code wasnt working because declared variable
+   were trying to be redeclared with the equal signs (=).
+*/
+
+/* Changes made to achieve the intended behavior
+* Fixed up all the problems by replacing all equal signs with 
+  semi colons (:) to assign nested objects to the key and 
+  then removed extra spaces and negative balances.
+* Changed the access id and postal-code to camelCase.
+* changed the property of the name object of sarah so the 
+  extra space is added by using square brackets.
+* changed the property of the name object of sarah so the 
+  extra space is added by using square brackets, also added 
+  comments regarding the case statement of WHY and HOW.
+*/
+
+// Why code didnt work - Because of all the above applied solutions
+
+// Yes there are other ways this could have been solved
