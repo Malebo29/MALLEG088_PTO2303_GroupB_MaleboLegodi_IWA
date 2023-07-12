@@ -37,5 +37,7 @@ const sarah = {
 	}
 }
 
+sarah['name'] = 'Sarah Kleinhans'
+
 console.log(leo, leo['address']['postalCode'])
 console.log(sarah, sarah['address']['postalCode'])
