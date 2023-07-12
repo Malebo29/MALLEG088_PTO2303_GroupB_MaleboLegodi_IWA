@@ -58,6 +58,6 @@ console.log(sarah, sarah['address']['postalCode'])
   comments regarding the case statement of WHY and HOW.
 */
 
-// Why code didnt work - Because of all the above applied solutions
+// Why code didnt work - Because of all the above applied solutions.
 
-// Yes there are other ways this could have been solved
+// Yes there are other ways this could have been solved.
