@@ -35,3 +35,11 @@ const startingAfterTax = salary * 1 - taxAsDecimal;
 const type = `${size} ${lodging}`;
 const balance = startingAfterTax - (expenses.transport - expenses.food) - rent['large-apartment'];
 console.log(balance.toFixed(2))
+
+
+/*Used parseInt to turn the taxAsDecimal into a number 
+* then interpolated the type variable to match the rent 
+* object keys so the correct number gets assigned and used as the rent value. 
+* Assigned the after-tax amount by adding the startingAfterTax variable as a 
+* value for the balance variable and then subtract all expenses including rent depending on the place of rental.
+*/
