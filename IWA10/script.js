@@ -57,24 +57,18 @@ if(futureId === holidays.id){}
 console.log(holidays.name || `ID ${futureId} not created yet`);
 // console.log(holidays.futureId || `ID ${futureId} not created yet`)
 
-
-
 let copied = holidays[christmas]
 copied.name = 'X-mas'
-// copied.date = new Date(`25 December ${currentYear} 00:00`)
-console.log(copied)
-
 let correctDate = copied.date
 correctDate.setHours(0)
 correctDate.setMinutes(0)
-console.log(correctDate)
 
-let isEarlier = correctDate < holidays[6].date
+let isEarlier = copied.date <= holidays[6].date
 console.log('New date is earlier:', isEarlier)
-if (isEarlier) copied.date = correctDate
-console.log('ID change:', holidays[christmas].id != copied.id || copied.id)
+// if (isEarlier) copied.date = correctDate
+console.log('ID change:', holidays[christmas].id !== copied.id ? true : false)
 console.log('Name change:', holidays[christmas].name != copied.name || copied.name)
-console.log('Date change:', holidays[christmas].date != copied.date || copied.date)
+console.log('Date change:', correctDate.toLocaleDateString("en-GB"))
 
 const firstHolidayTimestamp = Math.min(
     holidays[0].date.getTime,
@@ -113,4 +107,9 @@ console.log(randomHoliday.date)
 
 /* worked on the code to define all the undifined variables copied and correctDate, 
 *  also correctly set the minute and hour of the correctDate to 0.
+*  Changed the equal sign operator to an comparison Operators (less than or equal to) <=
+*  changed the equal sign operator to comparison Operators - less than or equal to - 
+*  to check if the new date is earlier than the current date.
+*  Also updated the code to evaluate if copiedID is different from the original chrismasID 
+   value then return if truthy or falsy.
 */
