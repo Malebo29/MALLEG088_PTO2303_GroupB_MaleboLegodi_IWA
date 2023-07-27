@@ -110,3 +110,7 @@ console.log(`${lastDay} / ${lastMonth} / ${currentYear}`)
 
 const randomHoliday = holidays[Math.random]
 console.log(randomHoliday.date)
+
+/* worked on the code to define all the undifined variables copied and correctDate, 
+*  also correctly set the minute and hour of the correctDate to 0.
+*/
