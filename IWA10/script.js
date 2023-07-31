@@ -70,40 +70,58 @@ console.log('ID change:', holidays[christmas].id !== copied.id ? true : false)
 console.log('Name change:', holidays[christmas].name != copied.name || copied.name)
 console.log('Date change:', correctDate.toLocaleDateString("en-GB"))
 
+// holidays[0].date = new Date(`16 December ${currentYear}`);
+
+holidays[0].date = new Date (`16 December ${currentYear}`);
+// console.log(holidays[0].date)
+// console.log(typeof holidays[0].date)
+
 const firstHolidayTimestamp = Math.min(
-    holidays[0].date.getTime,
-    holidays[1].date.getTime,
-    holidays[2].date.getTime,
-    holidays[3].date.getTime,
-    holidays[4].date.getTime,
-    holidays[5].date.getTime,
-    holidays[6].date.getTime,
-    holidays[7].date.getTime,
-    holidays[8].date.getTime,
+    holidays[0].date.getTime(),
+    holidays[1].date.getTime(),
+    holidays[2].date.getTime(),
+    holidays[3].date.getTime(),
+    holidays[4].date.getTime(),
+    holidays[5].date.getTime(),
+    holidays[6].date.getTime(),
+    holidays[7].date.getTime(),
+    holidays[8].date.getTime(),
 )
+// console.log(firstHolidayTimestamp)
 
 const lastHolidayTimestamp = Math.max(
-    holidays[0].date.getTime,
-    holidays[1].date.getTime,
-    holidays[2].date.getTime,
-    holidays[3].date.getTime,
-    holidays[4].date.getTime,
-    holidays[5].date.getTime,
-    holidays[6].date.getTime,
-    holidays[7].date.getTime,
-    holidays[8].date.getTime,
+    holidays[0].date.getTime(),
+    holidays[1].date.getTime(),
+    holidays[2].date.getTime(),
+    holidays[3].date.getTime(),
+    holidays[4].date.getTime(),
+    holidays[5].date.getTime(),
+    holidays[6].date.getTime(),
+    holidays[7].date.getTime(),
+    holidays[8].date.getTime(),
 )
+// console.log(lastHolidayTimestamp)
 
-const firstDay = firstHolidayTimestamp.getDate
-const firstMonth = firstHolidayTimestamp.getMonth
-const lastDay = lastHolidayTimestamp.getDate
-const lastMonth = lastHolidayTimestamp.getMonth
+const firstDay = new Date (firstHolidayTimestamp).getDate().toString().padStart(2,0);
+// console.log(firstDay)
+const firstMonth = new Date(firstHolidayTimestamp).getMonth().toString().padStart(1,0) + 1;
+// console.log(firstMonth)
+const lastDay = new Date(lastHolidayTimestamp).getDate();
+// console.log(lastDay)
+const lastMonth = new Date(lastHolidayTimestamp).getMonth() + 1;
+// console.log(lastMonth)
 
-console.log(`${firstDay} / ${firstMonth} / ${currentYear}`)
-console.log(`${lastDay} / ${lastMonth} / ${currentYear}`)
+console.log(`${firstDay}/${firstMonth}/${currentYear}`)
+console.log(`${lastDay}/${lastMonth}/${currentYear}`)
 
-const randomHoliday = holidays[Math.random]
-console.log(randomHoliday.date)
+const randomHoliday = Math.floor(Math.random(holidays) * 9);
+console.log(typeof randomHoliday)
+console.log(randomHoliday)
+
+if(holidays == randomHoliday){}
+console.log(holidays.date);
+
+
 
 /* worked on the code to define all the undifined variables copied and correctDate, 
 *  also correctly set the minute and hour of the correctDate to 0.
