@@ -1,32 +1,50 @@
-const 1-root = document(order1),
-const 1-biscuits: document(biscuits),
-const 1-donuts: document(donuts),
-const 1-pancakes: document(pancakes),
-const 1-status: document(status)
+const order1 = document.querySelector('[data-key="order1"]'); // checks for the value of the date-key
+console.log(order1.dataset);
+console.log(order1.dataset.biscuits); // get the property by the part of the attribute name after data-
+console.log(typeof order1);
 
-const 2-root = document(order2),
-const 2-biscuits: document(biscuits),
-const 2-donuts: document(donuts),
-const 2-pancakes: document(pancakes),
-const 2-status: document(status)
+// const biscuits1 = document.querySelector(order1.dataset.biscuits);
+const biscuits1 = document.querySelector('.biscuits');
+const donuts1 = document.querySelector('.donuts');
+const pancakes1 = document.querySelector('.pancakes');
+const status1 = document.querySelector('.delivered');
 
-const 3-root = document(order3),
-const 3-biscuits: document(biscuits),
-const 3-donuts: document(donuts),
-const 3-pancakes: document(pancakes),
-const 3-status: document(status)
+console.log(biscuits1);
 
-1-biscuits= 1-root.biscuits,
-1-donuts = 1-root.donuts,
-1-pancakes = 1-root.pancakes,
-1-status = 1-root.status ? Delivered : Pending
 
-2-biscuits= 2-root.biscuits,
-2-donuts = 2-root.donuts,
-2-pancakes = 2-root.pancakes,
-2-status = 2-root.status ? Delivered : Pending
 
-3-biscuits= 3-root.biscuits,
-3-donuts = 3-root.donuts,
-3-pancakes = 3-root.pancakes,
-3-status = 3-root.status ? Delivered : Pending
+const order2 = document.querySelector('[data-key="order2"]');
+console.log(order2.dataset);
+console.log(typeof order2);
+
+const biscuits2 = document.querySelector('.biscuits');
+const donuts2 = document.querySelector('.donuts');
+const pancakes2 = document.querySelector('.pancakes');
+const status2 = document.querySelector('.delivered');
+
+console.log(biscuits2);
+
+const order3 = document.querySelector('[data-key="order3"]');
+console.log(order3.dataset);
+console.log(typeof order2);
+
+const biscuits3 = document.querySelector('.biscuits');
+const donuts3 = document.querySelector('.donuts');
+const pancakes3 = document.querySelector('.pancakes');
+const status3 = document.querySelector('.delivered');
+
+
+biscuits1.order1.biscuits;
+donuts1.order1.donuts;
+pancakes1.pancakes;
+status1 = order1.status ? Delivered : Pending;
+
+biscuits2 = order2.biscuits;
+donuts2 = order2.donuts;
+pancakes2 = order2.pancakes;
+status2 = order2.status ? Delivered : Pending;
+
+biscuits3 = order3.biscuits;
+donuts3 = order3.donuts;
+pancakes3 = order3.pancakes;
+status3 = order3.status ? Delivered : Pending;
