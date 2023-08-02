@@ -111,15 +111,8 @@ const lastDay = new Date(lastHolidayTimestamp).getDate();
 const lastMonth = new Date(lastHolidayTimestamp).getMonth() + 1;
 // console.log(lastMonth)
 
-console.log(`${firstDay}/${firstMonth}/${currentYear}`)
-console.log(`${lastDay}/${lastMonth}/${currentYear}`)
-
-const randomHoliday = Math.floor(Math.random(holidays) * 9);
-console.log(typeof randomHoliday)
-console.log(randomHoliday)
-
-if(holidays == randomHoliday){}
-console.log(holidays.date);
+const randomHoliday = holidays[Math.round(Math.random() * 8)]
+console.log(randomHoliday.date.toLocaleDateString("en-GB"));
 
 
 
