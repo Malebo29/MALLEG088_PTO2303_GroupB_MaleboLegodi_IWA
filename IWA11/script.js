@@ -1,7 +1,5 @@
-const order1 = document.querySelector('[data-key="order1"]'); // used the querySelector method to access data attributes of the three order groups
+const order1 = document.querySelector('[data-key="order1"]');
 console.log(order1);
-// console.log(order1.dataset.biscuits); // get the property by the part of the attribute name after data-
-// console.log(typeof order1);
 
 const biscuits1 = order1.getAttribute('data-biscuits');
 const donuts1 = order1.getAttribute('data-donuts');
@@ -38,3 +36,9 @@ order3.children[0].children[1].innerHTML = biscuits3
 order3.children[1].children[1].innerHTML = donuts3
 order3.children[2].children[1].innerHTML = pancakes3
 order3.children[3].children[1].innerHTML = status3 ? 'Delivered' : 'Pending'
+
+/* Used the querySelector method to access data attributes of the three order groups.
+*  Used the getAttribute method on the orders variables (order1, order2 and order3) to access the items of each order. 
+*  From each order element, accessed the 1st, 2nd, 3rd, and 4th Children then 
+*  Accessed their first children and used innerHTML to render out the content of the assigned data attribute value.
+*/
