@@ -29,24 +29,27 @@ const STATUS_MAP = {
 
 // Book 1
 
-// const book1 = document.getElementById('#book1')
-// console.log(book1)
+const book1 = document.querySelector('#book1')
+console.log(book1)
 
-const status1 = document.getElementsByClassName('.status')
-const reserve1 = document.getElementsByClassName('.reserve')
-const checkout1 = document.getElementsByClassName('.checkeout')
-const checkin1 = document.getElementsByClassName('.checkin')
+const status1 = document.querySelector('.status')      // child 0
+const reserve1 = document.querySelector('.reserve')     // child 1
+const checkout1 = document.querySelector('.checkeout')     // child 2
+const checkin1 = document.querySelector('.checkin')         // child 3
 
-book1[0].color = 'blue'
-status1[0].style.color = STATUS_MAP.status.color
-reserve1[0] = STATUS_MAP.status.canReserver ? 'enabled' : 'disabled'
-checkout1[0] = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
-checkin1[0] = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
+console.log(status1)
 
-// // Book 2
+// checkin1[0].color = ''
+// status1[0].style.color = STATUS_MAP.status.color
+// reserve1[0] = STATUS_MAP.status.canReserver ? enabled : disabled
+// checkout1[0] = STATUS_MAP.status.canCheckout ? enabled : diabled
+// checkin1[0] = STATUS_MAP.status.canCheckIn ? enabled : disabled
 
-// const book2 = document.getElementById('#book2')
-// console.log(book2)
+
+// Book 2
+
+const book2 = document.querySelector('#book2')
+console.log(book2)
 
 // const status2 = book2.querySelector(status)
 // const reserve2 = book2.querySelector(reserve)
@@ -59,10 +62,10 @@ checkin1[0] = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
 // checkout2[1] = STATUS_MAP.status.canCheckout ? 'enabled' : 'disabled'
 // checkin2[1] = STATUS_MAP.status.canCheckIn ? 'enabled' : 'disabled'
 
-// // Book 3
+// Book 3
 
-// const book3 = document.getElementById('#book3')
-// console.log(book3)
+const book3 = document.querySelector('#book3')
+console.log(book3)
 
 // const status3 = document.querySelector(status2)
 // const reserve3 = document.querySelector(reserve2)
