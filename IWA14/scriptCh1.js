@@ -13,7 +13,7 @@ function newHobby () {
 
 newHobby()
 
-/* To use the statement parameters, they first needed to be declared
-*  to work as event handler function for the logTwice() function.
-*  To get the 2 lines executed, console.log was also added to the statement parameters.
+/* First i added the statement parameter of the logTwice function into in the event handler function 
+*  so it can be declared before being used. I then executed the parameter statement twice while renaming 
+*  the hobby function to newHobby because hobby is already declared as a variable.
 */
