@@ -1,11 +1,26 @@
-function add = a, b => { a + b }
+// because we are adding a + b together, the variable 'a' and 'b' for both functions are put in brackets to pass them inside their functions
+// multiple parameters
 
-function multiply = a, b => { a - b }
+const add = (a, b) => a + b
 
-function internal() {
-	const added = this.add(this.a, this.b)
+const multiply = (a, b) => a - b
+
+// const internal = () => {
+// 	const added = this.add(this.a, this.b)
+// 	const multiplied = this.multiply(this.a, this.b)
+// 	return added + multiplied;
+// }
+
+// const internal = () => {
+// 	this.add(this.a, this.b)
+// 	this.multiply(this.a, this.b)
+// 	return internal;
+// }
+
+function internal () {
+	this.add(this.a, this.b)
 	this.multiply(this.a, this.b)
-	return this
+	return internal;
 }
 
 // Not allowed to change below this
