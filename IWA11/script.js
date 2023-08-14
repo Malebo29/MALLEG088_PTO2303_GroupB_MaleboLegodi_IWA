@@ -9,7 +9,13 @@ const status1 = order1.getAttribute('data-delivered');
 order1.children[0].children[1].innerHTML = biscuits1
 order1.children[1].children[1].innerHTML = donuts1
 order1.children[2].children[1].innerHTML = pancakes1
-order1.children[3].children[1].innerHTML = status1 ? 'Delivered' : 'Pending'
+// order1.children[3].children[1].innerHTML = status1 ? 'Delivered' : 'Pending'
+
+if(status1 == "true"){
+    order1.children[3].children[1].innerHTML = "Delivered";
+    } else {
+        order1.children[3].children[1].innerHTML = "Pending";
+    }
 
 const order2 = document.querySelector('[data-key="order2"]');
 console.log(order2);
@@ -22,7 +28,13 @@ const status2 = order2.getAttribute('data-delivered');
 order2.children[0].children[1].innerHTML = biscuits2
 order2.children[1].children[1].innerHTML = donuts2
 order2.children[2].children[1].innerHTML = pancakes2
-order2.children[3].children[1].innerHTML = status1 ? 'Delivered' : 'Pending'
+// order2.children[3].children[1].innerHTML = status1 ? 'Delivered' : 'Pending'
+
+if(status2 == "true"){
+    order2.children[3].children[1].innerHTML = "Delivered";
+    } else {
+        order2.children[3].children[1].innerHTML = "Pending";
+    }
 
 const order3 = document.querySelector('[data-key="order3"]');
 console.log(order3);
@@ -35,7 +47,13 @@ const status3 = order3.getAttribute('data-delivered');
 order3.children[0].children[1].innerHTML = biscuits3
 order3.children[1].children[1].innerHTML = donuts3
 order3.children[2].children[1].innerHTML = pancakes3
-order3.children[3].children[1].innerHTML = status3 ? 'Delivered' : 'Pending'
+// order3.children[3].children[1].innerHTML = status3 ? 'Delivered' : 'Pending'
+
+if(status3 == "true"){
+    order3.children[3].children[1].innerHTML = "Delivered";
+    } else {
+        order3.children[3].children[1].innerHTML = "Pending";
+    }
 
 /* Used the querySelector method to access data attributes of the three order groups.
 *  Used the getAttribute method on the orders variables (order1, order2 and order3) to access the items of each order. 
