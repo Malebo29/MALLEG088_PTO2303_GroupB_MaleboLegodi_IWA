@@ -6,39 +6,30 @@ const data = {
 	]
 }
 
-console.log(data.lists)
+const [ first ]= [ data.lists[0][1], []]
+const [ second ] = [ data.lists[1][1], []]
+const [ third ] = [ data.lists[2][1], []]
 
-// Only edit below
+const result = [first.concat(second, third)]
 
-// const first = Math.max.apply(null, data.lists[0][1])  // using the Math.max() method to find the the largest value in the lists array of the data object.
-// console.log(first)
+const extractBiggest = () => {    
+	let maxNumber = -Infinity;
+	let MaxIndex = -1;
 
-// const second = Math.max.apply(null, data.lists[1][1])
-// console.log(second)
+	for (let i = 0; i < data.lists.length; i++){
+		const array = data.lists[i][1];
+		const lastValue = array[array.length -1];
 
-// const third = Math.max.apply(null, data.lists[2][1])
-// console.log(third)
-
-const { first = Math.max.apply(null, data.lists[0][1]) } = data.first || {}
-const { second = Math.max.apply(null, data.lists[1][1]) } = data.second || {}
-const { third = Math.max.apply(null, data.lists[2][1]) } = data.third || {}
-
-console.log(first)
-console.log(second)
-console.log(third)
-
-const result = []
-
-const extractBiggest = () => {    // Math.max()
-	if (first[-1] > second[-1]) {
-		return first
+		if (lastValue > maxNumber) {
+			maxNumber = lastValue;
+			MaxIndex = i;
+		}
 	}
 
-	if (third[-1] < 1) {
-		return second
+	if (MaxIndex !== -1) {
+		const maxValue = data.lists[MaxIndex][1].pop();
+		return maxValue;
 	}
-	
-	return third
 }
 
 // Only edit above
@@ -62,3 +53,16 @@ result.push(extractBiggest())
 result.push(extractBiggest())
 
 console.log(result)
+
+
+/* Created a maxNumber variable and set it to Infinity, the lowest lowest possible number and 
+   maxIndex variable for the index -1 that always checks the indexes from the last one in an array. 
+*  Used a ‘for’ loop to loop through the data array and for each item, I set my array const to the 
+   2nd index which is an array we want to check.
+*  updating the maxNumber with our lastValue if it is greater than the maxNumber and since we in a 
+   loop checking whether each last item of the array is greater than the last set value, we end up with 
+   maxNumber equal to the largest value. This value is then pushed to the result array each time with the 
+   call and pushes we're not editing. 
+*  Finally, the If statement checks if our maxNumber is not -1, then 
+   removing that value from the array concerned and returning that maxNumber from the function extraBiggest.
+*/

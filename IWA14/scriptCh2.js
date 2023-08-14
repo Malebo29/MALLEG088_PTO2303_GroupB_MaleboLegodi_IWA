@@ -4,42 +4,27 @@
 const add = (a, b) => a + b
 const multiply = (a, b) => a - b
 
-// function add(a, b) {
-// 	return a + b;
+// function Internal() {
+//  this.add = add // (this.a, this.b)
+//  this.multiply = multiply // (this.a, this.b)
+//  return this
+// }
+
+// function Internal() {
+//   this.add = this.a + this.b
+//   this.multiply = this.a - this.b
+//       return this
 //   }
 
-//   function multiply(a, b) {
-// 	return a - b;
-//   }
-
-console.log(add (3, 7));
-console.log(multiply (8, 2));
-
-function internal (add, multiply) {
-	this.add = (this.a + this.b)
-	this.multiply = (this.a - this.b)
-	return internal;
+function internal (add, multiply) {					// Constructor Function used to create objects
+	this.add = add(this.a, this.b);
+    this.multiply = multiply(this.a, this.b);
+	return this;
 }
 
-// function Internal () {					// Constructor Function used to create objects
-// 	const added = this.add(this.a + this.b)
-// 	this.multiply(this.a - this.b)
-// 	return added;
-// }
+console.log(internal())
 
-// const internal = () => {
-// 	const added = this.add(this.a, this.b)
-// 	this.multiply(this.a, this.b)
-// 	return added;
-// }
-
-console.log(internal());
-
-// function internal () {
-// 	this.add = (this.a, this.b)
-// 	this.multiply = (this.a, this.b)
-// 	// return internal;
-// }
+// const calculate = internal();
 
 // Not allowed to change below this
 
@@ -52,7 +37,7 @@ const example1 = {
 	add,
 	multiply,
   calculate: internal
-}
+};
 
 const example2 = {
 	internal: {
@@ -63,7 +48,7 @@ const example2 = {
 	add,
 	multiply,
   calculate: internal
-}
+};
 
-example1.calculate()
-example2.calculate()
+console.log(example1.calculate());
+console.log(example2.calculate());
