@@ -79,15 +79,17 @@ const createHtml = (athlete) => {
   title.innerHTML = id;
   fragment.appendChild(title);
 
-  const day = new Date(date).getDate().toString().padStart(2,0);
-  const month = MONTHS[new Date(date).getMonth().toString().padStart(1,0)] 
+  const day = new Date(date).getDate();
+  const month = MONTHS[new Date(date).getMonth()];
   const year = new Date(date).getFullYear();
 
   const [first, second, third, fourth] = time;
   const total = first + second + third + fourth;
 
-  const hours = total / 60;
-  const minutes = total / hours / 60;
+  const hours = (total / 60);
+  const rhours = Math.floor(hours);
+  const minutes = (hours - rhours) * 60;
+  const rminutes = Math.floor(minutes);
 
   list.innerHTML = /* html */ `
     <dt>Athlete</dt>
@@ -100,7 +102,7 @@ const createHtml = (athlete) => {
     <dd>${day} ${month} ${year}</dd>
 
     <dt>Total Time (Latest)</dt>
-    <dd>${hours} ${minutes}</dd>`;
+    <dd>${rhours}:${rminutes}</dd>`;
 
   })
   return fragment.appendChild(list);
