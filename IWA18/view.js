@@ -31,7 +31,7 @@ export const createOrderHtml = (order) => {
 
             <div class="order__row">
                 <dt>Ordered:</dt>
-                <dd class="order__value">${hours}:${minutes}</dd>
+                <dd class="order__time">${hours}:${minutes}</dd>
             </div>
         </dl>
     `
