@@ -45,7 +45,6 @@ console.log(checkin[0])
 checkin[1].style.color = ''
 status[1].style.color = STATUS_MAP.reserved.color
 
-
 reserve[1] = STATUS_MAP.reserved.canReserve ? 'enabled' : 'disabled'
 checkout[1] = STATUS_MAP.reserved.canCheckout ? 'enabled' : 'disabled'
 checkin[1] = STATUS_MAP.reserved.canCheckIn ? 'enabled' : 'disabled'
