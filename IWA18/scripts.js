@@ -1,7 +1,9 @@
 import { html, createOrderHtml, moveToColumn, updateDraggingHtml } from "./view.js";
-import { createOrderData, state, updateDragging } from "./data.js";
+import { createOrderData, state, COLUMNS, updateDragging } from "./data.js";
 
-const orders = []
+state.orders.orders = [];
+let edittedOrderId = '';
+
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -88,6 +90,7 @@ const handleAddSubmit = (event) => {
     let table = data.get('table')
     const column = 'ordered'
     const order = createOrderData({title, table, column})
+    state.orders.orders.push(order)
 
     const orderHtml = createOrderHtml(order)
     console.log(orderHtml)
@@ -106,31 +109,27 @@ const handleAddSubmit = (event) => {
 
 const handleEditToggle = (event) => {
     event.preventDefault()
-    // event.dataTransfer.setData('id', document.querySelector('[data-id]') )
-    const editTarget = event.target
+    const orderId = event.target.getAttribute('data-id');
     const editOrder = html.edit.overlay
-    orders.push(editTarget.getAttribute('data-id'))
+    const editForm = html.edit.form
 
-
-    switch (editTarget) {
+    switch (event.target) {
         case html.edit.cancel: {
             editOrder.removeAttribute('open')       
             html.other.add.focus()  
         }
         break
 
-        default:{           
+        default:{
+            const order = state.orders.orders.filter((order) => order.id == orderId);           
             html.edit.overlay.setAttribute('open', 'open')
-            const title = document.getElementById('edit-form').children.item(1).children.item(1)
-            const tableSelection = document.getElementById('edit-form').children.item(2).children.item(1)      
-            const statusSelection = document.getElementById('edit-form').children.item(3).children.item(1)
-            title.setAttribute('value', event.target.querySelector('.order__title').innerText)
-
-            tableSelection.options[event.target.querySelector('.order__value').innerText - 1].selected = true
-            statusSelection.options[event.target.querySelector('.order__time').innerText].selected = true
+            edittedOrderId = order[0].id;
+            editForm.querySelector('[data-edit-title]').value = order[0].title;
+            editForm.querySelector('[data-edit-table]').options[order[0].table - 1].selected = true;
+            editForm.querySelector('[data-edit-column]').options[COLUMNS.indexOf(order[0].column)].selected = true;
         }
-    };
-}
+    }
+};
 
 const handleEditSubmit = (event) => {
     event.preventDefault()
@@ -141,29 +140,38 @@ const handleEditSubmit = (event) => {
 
     if(event.target){
         const orderParentElement = document.querySelector('[data-id]')
-        const orderTitle = orderParentElement.children.item(0)
-        orderTitle.innerHTML = title
-        const orderTable = orderParentElement.children.item(1).children.item(0).children.item(1)
-        orderTable.innerHTML = table
-
-        moveToColumn(orders[0], column)
-        orders.pop()
+        if(orderParentElement.getAttribute('data-id') == edittedOrderId){
+            const orderTitle = orderParentElement.children.item(0)
+            orderTitle.innerHTML = title
+            const orderTable = orderParentElement.children.item(1).children.item(0).children.item(1)
+            orderTable.innerHTML = table
+            moveToColumn(edittedOrderId, column)
+            const orderStatus = state.orders.orders.filter((order) => order.id == edittedOrderId)[0];
+            orderStatus.title = title
+            orderStatus.table = table
+            orderStatus.column = column
+        }
     }
 
+    edittedOrderId = ''
     const submitOverlay = html.edit.overlay
     submitOverlay.removeAttribute('open')
     html.other.add.focus()
-}
+};
 
 const handleDelete = (event) => {
     event.preventDefault()
-    const item = document.querySelector('[data-id]')    
-    item.remove()
+    const editOrderItem = state.orders.orders.filter((order) => order.id == edittedOrderId)[0];
+    state.orders.orders.pop(editOrderItem)
+    const editOrderItemHtml = document.querySelector('[data-id]')
+    if(editOrderItemHtml.getAttribute('data-id') == edittedOrderId){
+    editOrderItemHtml.remove()
+    }    
 
     const editOverlay = html.edit.overlay
     editOverlay.removeAttribute('open')
     html.other.add.focus()
-}
+};
 
 html.add.cancel.addEventListener('click', handleAddToggle)
 html.other.add.addEventListener('click', handleAddToggle)
